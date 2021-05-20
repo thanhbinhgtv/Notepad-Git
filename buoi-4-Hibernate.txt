@@ -1,0 +1,61 @@
+1. Tạo CSDL
+2. Tạo Project + tải thư viện add thư viện 
+	+ maven project (next tích creat simple...)
+	+ khai báo thư viện trong pom.xml thên <dependencies></dependencies>
+		hibernate core dependency
+		sqlserver connector dependency
+	+ chuột phải - maven - update project
+3. khai báo mapping OBJECT-TABLE
+	(annotation hoặc mapping)
+	+ tạo packet + class trong src/main/java
+	+ @Entity(name="users")
+	hoặc 	@Entity
+		@Table(name = "tenBang")
+	+ @Id khóa chính
+	+ @GeneratedValue(strategy = GenerationType.IDENTITY) tự tăng
+	+ @Column(name="tenCot", length =32, nullable=false) tên field trùng tên cột thì không cần
+	+ getter setter Alt + shift + S + R
+	+ implements Serializable 
+4. cấu hình Configuration
+	+ khai báo kết nối
+		tạo hibernate.cfg.xml trong src/main/resources
+		xem source
+	+ khai báo mapping (2 cách)
+		<mapping class="tenpacket.TenClass"></mapping> (trong <session-factory>)	
+5. viết hàm tạo sessionFactory
+	+ tạo packet + class Util (trong src/main/java)
+	+ tạo mehtod trả về SessionFectory
+	try{
+		Configuration conf = new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		//conf.addClass(User.class);
+		return  conf.buildSessionFactory();
+	}catch
+6. lấy thêm sửa xóa
+	+ tạo sessionFactory //static final SessionFactory factory =HibernateUtil.getSessionFactory();
+	try
+	+ tạo session	Session session= factory.getCurrentSession();  hoặc factory.openSession();
+	+ tạo transaction	//Transaction trans= session.beginTransaction();
+	+ truy vấn: list=session.createQuery("FROM NhanVien").list();
+	+ lưu 1 nhân viên: session.save(nv);
+	+ commit để thực hiện: trans.commit(); hoặc session.beginTransaction().commit();
+	+ session.close() đóng kết nối
+	catch
+
+
+
+
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.4.10.Final</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+<dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>6.2.2.jre8</version>
+</dependency>

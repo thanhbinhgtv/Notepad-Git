@@ -1,0 +1,102 @@
+---------------------- Commit -------------------------
+- Xem trạng thái :			$ git status
+- Xem commit :				$ git log
+					$ git log --oneline
+- Xem commit trên remote		$ git log --oneline origin/nameBranch
+- Xem hình commit branch :		$ git log --oneline --graph
+
+----------------------- Merge --------------------------
+- Gộp nhánh :			$ git merge nameBranch --no-ff  (Có commit "merge branch ...")
+				$ git merge nameBranch  (Ko có commit "merge branch ...")
+	(nếu gộp có xung đột phải chỉnh sửa sau đó git add + git commit)
+
+------------------------ Reset --------------------------
+- Reset về commit C1 :		$ git reset --hard idC1 (xóa toàn bộ commit sau C1 ở local)
+				$ git reset --soft idC1
+
+- Xóa commit trên remote về bằng local :	$ git push origin -f	(xóa trên remote)
+						$ git push origin nameBranch -f
+	
+- Xóa commit cuối cùng về sau add local :	$ git reset --soft head~1	(đưa vào vùng staging)
+- Xóa tất cả nội dung commit cuối local :	$ git reset --hard head~1	(xóa cứng luôn)
+
+- Trở về status trước khi file bị thay đổi :	$ git restore nameFile
+
+---------------------- Remote --------------------------
+- Add remote :				$ git remote add origin https://github.com/thanhbinhgtv/Test.git
+- Xóa remote ở local :			$ git remote rm nameRemote
+- Xem link remote :			$ git remote -v
+
+---------------------- Branch --------------------------
+- Tạo nhánh :				$ git branch nameBranch
+- Làm việc với nhánh khác :		$ git checkout nameBranch
+					$ git switch nameBranch
+
+- Add một nhánh lên remote :		$ git push origin nameBranch
+- Add tất cả nhánh lên remote :		$ git push origin --all
+
+- Xóa nhánh ở local :			$ git branch -d nameBranch
+- Xóa nhánh ở remote :			$ git push --delete nameRemote nameBranch
+- Xóa tham chiếu origin/HEAD		$ git remote set-head origin -d
+
+- Xem nhánh ở local :			$ git branch
+- Xem các nhánh trên local và remote :	$ git branch -a
+
+------------------------ Add ----------------------------
+- Add :
+   + tất cả các file trừ xóa file :		$ git add .
+   + các file chưa được untracked :	$ git add *
+   + tên file muốn add :		$ git add name
+   + mọi thứ có sự thay đổi :		$ git add -A
+   + mọi thứ trừ file mới :		$ git add -u
+
+- Bỏ add tất cả file đã add trên local :	$ git reset
+						$ git reset -- .
+- Bỏ add một file đã add trên local :		$ git reset -- nameFile
+						$ git reset head -- nameFile
+- Liệt kê các file untracked muốn xóa :		$ git clean -d -n	(b1)
+- Xóa các file untracked :			$ git clean -d -f	(b2)
+- Trở về trạng thái trước khi file bị sửa :	$ git restore -- .
+						$ git restore -- nameFile
+
+- Đồng bộ Local => Github  server :		$ git push
+- Đồng bộ Local <= Gibhub server :		$ git pull
+
+------------------------ Pull ----------------------------
+- Cập nhật info mới từ remote origin :		$ git fetch origin
+						$ git fetch origin namebranch
+($ git checkout nameBranch để lấy branch đấy từ remote)
+($ git pull origin namebranch để cập nhật branch mới từ remote về local)
+
+- Cập nhật cho nhánh master local :		$ git pull origin master
+
+------------------------ Push ----------------------------
+- Push code tất cả các nhánh lên remote :	$ git push origin --all
+- Push code lên remote vào nhánh master :	$ git push origin master
+	(Push nhánh master tại local lên remote)
+
+---------------------Clone về máy-------------------------??
+- Clone : 					$ git clone link
+- Change name : 				$ git clone link NameChange
+
+--------------------Push lên GitHub-----------------------??
+- Clone : 					$ git clone "link"
+- Copy Source code vào folder :			1- $ git init
+						2- $ git add .
+						3- $ git conmit -m "first commit"
+						4- $ git push "name" "url"
+
+---------------------- Info config ---------------------------
+- Xem Info cấu hình : 			$ git config --list
+- Xem user.name and user.email :	$ git config --global --list
+- Sửa user.name and user.email	:	$ git config --global -e
+
+- 					$ git config --global user.name "User Name"
+- 					$ git config --global user.email "username@gmail.com"
+(--global được sử dụng để áp dụng cho tất cả các projects. Nếu bạn ko sử dụng --global thì settings sẽ chỉ dùng cho riêng project đó.)
+
+(Xong nhấn : Insert => ESC => :q)
+
+
+https://www.youtube.com/watch?v=gjQDyND-vN8&list=PLwJr0JSP7i8D041yrTcWB_qEdzijIUX-q
+

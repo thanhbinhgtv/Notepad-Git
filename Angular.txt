@@ -1,0 +1,54 @@
+- Cài angular vào hệ thống : 	npm install -g @angular/cli
+- Tạo Project : 		ng new tenproject
+- Chạy Project :		ng serve
+
+-------------------------------------------------
+- Tạo Component demo :		- ng generate component demo
+				- ng g c demo --skipTests
+- Tạo Service :			- ng g s demo
+- Tạo Module :			- ng g m demo
+- Tạo Guard :			- ng g g demo
+- Tạo Module + Router :		- ng g m demo --routing
+-------------------------------------------------
+1. FontAwesomeModule :
+	- Tùy phiên bản
+2. toastr :		- npm install ngx-toastr --save
+			- npm install @angular/animations --save
+			- "styles": [
+     	 			"node_modules/ngx-toastr/toastr.css",
+      				"src/styles.css"
+    		   	  ],
+3. ngx-webstorage :	- npm install --save ngx-webstorage
+
+4. EditorModule (form nhập văn bản) :
+			- npm install --save @tinymce/tinymce-angular
+
+5. Ngbootstrap (login):	- npm install --save @ng-bootstrap/ng-bootstrap
+			- ng add @angular/localize
+			- import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+6. FireBase :		- npm install firebase @angular/fire --save (???)
+
+ DATN :			- npm i firebase@7.24.0 angularfire2 --save
+				+ import { AngularFireModule } from "angularfire2";
+				+ import { AngularFireStorage } from "angularfire2/storage";
+				+ import { AngularFirestore } from "angularfire2/firestore";
+			- npm i --save angularfire2@5.0.0-rc.10	(ko cần)
+
+7. https://ng-bootstrap.github.io/#/home
+8. npm install ngx-pagination --save
+
+https://stackoverflow.com/questions/64559103/error-in-node-modules-angular-fire-firebase-app-module-d-ts/64612430 
+				
+
+7. HttpClientModule 	(Thao tác API)
+8. ReactiveFormsModule 	(FormGroup, FormControlName...)
+
+
+-------------------------------------------------
+angular material
+http://localhost:8080/swagger-ui.html#/
+
+https://anonystick.com/blog-developer/filter-va-find-trong-javascript-khi-nao-nen-su-dung-2019122643622007
+https://www.paypalobjects.com/en_GB/vhelp/paypalmanager_help/credit_card_numbers.htm
+https://ckeditor.com/docs/ckeditor5/latest/features/markdown.html
+https://prepaird.atlassian.net/browse/DEV-2277?focusedCommentId=26002&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#c[…]02
