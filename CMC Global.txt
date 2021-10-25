@@ -1,3 +1,7 @@
 Web mail : https://webmail.cmc.com.vn/.
 userName : cglobal\ptbinh1
 Pass : ...kiu12
+
+Microsoft Team :
+userName : ptbinh1@cmc.com.vn
+Pass : ...kiu12
