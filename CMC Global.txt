@@ -6,6 +6,10 @@ Microsoft Team :
 userName : ptbinh1@cmc.com.vn
 Pass : ...kiu12
 
+LDAP :
+userName : ptbinh1
+Pass : ...kiu123
+
 Udemy Reactjs : https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25595350#overview
 userName : minhhunter1996bn@gmail.com
 Pass : 1234Awsd
