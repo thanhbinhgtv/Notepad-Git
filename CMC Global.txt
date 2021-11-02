@@ -15,3 +15,7 @@ userName : minhhunter1996bn@gmail.com
 Pass : 1234Awsd
 
 Titkit support : https://pms.cmcglobal.com.vn/
+
+useName : sm35@gmail.com
+Pass :Test123
+Figma: https://www.figma.com/file/RMuB8BIYrAd9KIciMRMTEM/clix.cx-(-project-)---Local-1?node-id=2867%3A2
