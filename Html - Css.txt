@@ -1,0 +1,35 @@
+Flexbox : https://css-tricks.com/snippets/css/a-guide-to-flexbox/ 
+
+1. display : flex | inline--flex
+2. flex-direction : row | row-reverse | column | column-reverse;
+	(display:flex thì mặc định row)
+
+3. flex-wrap : nowrap | wrap | wrap-reverse
+	(Set giá trị xuống dòng)
+
+4. flex-basis : <length>
+	(Tùy vào main axis là chiều ngang hay dọc thì sẽ Set main-size cho flex-item theo chiều main-axis)
+
+5. justify-content : flex-start | flex-end | center | space-between | space-around
+	(Căn các flex-item sang trái, phải, hay giữa theo chiều main-axis)
+
+6. justify-self : flex-start | flex-end | center
+	(Jusfity-content set cho Cha, justify-self set cho Con. Khi set Jusfity-content set cho Cha
+	 thì thằng con sẽ ăn theo nên ko cần set justify-self nữa)
+
+7. align-content : flex-start | flex-end | center
+	(Giống 5.Justify-content nhưng set theo trục cross-xis)
+
+8. align-self : flex-start | flex-end | center
+	(Giống 6.justify-self nhưng theo align-content, cross-axis)
+
+8. flex-grow : <number>
+	(Thay đổi kích thước flex-item theo hướng main-size)
+
+9. flex-shrink : <number>
+	(Thay đổi kích thước flex-item theo hướng main-size)
+
+10. flex : <number>
+	(Cú pháp viết gộp cho : 4-8-9)
+11. order : <number>
+	(Thứ tự các flex-item hiển thị item nào trước, sau)
