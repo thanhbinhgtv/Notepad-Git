@@ -1,0 +1,2 @@
+
+oracledb.initOracleClient({libDir: 'C:/Users/ptbinh1/Desktop/instantclient-basic-windows.x64-21.3.0.0.0/instantclient_21_3'});
