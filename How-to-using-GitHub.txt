@@ -32,6 +32,8 @@
 ----------------------- Merge --------------------------
 - Gộp nhánh :					$ git merge nameBranch  	(Ko có commit "merge branch ...")
 						$ git merge nameBranch --no-ff  (Có commit "merge branch ...")
+- Tips :
+	(Đứng trên nhánh đang code có thể dùng ($ git pull origin develop) để merge mà ko cần sang develop để pull về trước)
 
 ------------------------ Reset Commit ------------------
 - Reset về commit idC1 :			$ git reset --soft idC1 	(đưa vào vùng staging)
