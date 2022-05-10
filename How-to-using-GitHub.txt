@@ -15,6 +15,8 @@
    + mọi thứ có sự thay đổi :			$ git add -A
    + mọi thứ trừ file mới :			$ git add -u
 
+(Khi đổi tên file) : 				$ git mv css/oldName.js css/newName.js
+
 - Bỏ add tất cả file đã add trên local :	$ git reset
 						$ git reset -- .
 - Bỏ add một file đã add trên local :		$ git reset -- nameFile
