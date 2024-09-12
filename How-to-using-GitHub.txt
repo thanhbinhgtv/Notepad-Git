@@ -1,11 +1,8 @@
------------------------ Status --------------------------
-- Xem trạng thái :				$ git status
-
 ------------------------ Log ----------------------------
 - Xem commit :					$ git log
 						$ git log --oneline
 - Xem commit trên remote			$ git log --oneline origin/nameBranch
-- Xem hình commit branch :			$ git log --oneline --graph
+- Xem graph commit branch :			$ git log --oneline --graph
 
 ------------------------ Add ----------------------------
 - Add :
@@ -15,7 +12,7 @@
    + mọi thứ có sự thay đổi :			$ git add -A
    + mọi thứ trừ file mới :			$ git add -u
 
-(Khi đổi tên file) : 				$ git mv css/oldName.js css/newName.js
+- Đổi tên file : 				$ git mv css/oldName.js css/newName.js
 
 - Bỏ add tất cả file đã add trên local :	$ git reset
 						$ git reset -- .
@@ -27,15 +24,14 @@
 						$ git restore -- nameFile
 						$ git restore nameFile
 ---------------------- Commit -------------------------
-- Commit (Chỉ có message title)			$ git commit -m"message title"
+- Commit					$ git commit -m"message name"
 - Commit (Tùy chỉnh message)			$ git commit 
-	(nhấn i hoặc insert để bắt đầu viết message - Esc để leave ra ngoài - :wq hoặc :wq! để kết thúc)
+(nhấn i hoặc insert để bắt đầu viết message - Esc để leave ra ngoài - :wq hoặc :wq! để kết thúc)
 
 ----------------------- Merge --------------------------
 - Gộp nhánh :					$ git merge nameBranch  	(Ko có commit "merge branch ...")
 						$ git merge nameBranch --no-ff  (Có commit "merge branch ...")
-- Tips :
-	(Đứng trên nhánh đang code có thể dùng ($ git pull origin develop) để merge mà ko cần sang develop để pull về trước)
+- Tips : Đứng trên nhánh đang code có thể dùng ($ git pull origin develop) để merge mà ko cần sang develop để pull về trước
 
 ------------------------ Reset Commit ------------------
 - Reset về commit idC1 :			$ git reset --soft idC1 	(đưa vào vùng staging)
@@ -53,30 +49,38 @@
 - Xóa tham chiếu origin/HEAD			$ git remote set-head origin -d
 
 ---------------------- Branch --------------------------
-- Tạo Branch  :					$ git branch nameBranch
-						$ git branch -b nameBranch
-- Làm việc với nhánh khác :			$ git checkout nameBranch
-						$ git switch nameBranch
-
-- Push một nhánh lên remote :			$ git push origin nameBranch
-- Push tất cả nhánh lên remote :		$ git push origin --all
-
+- Tạo Branch :					$ git branch nameBranch
 - Xóa nhánh ở local :				$ git branch -d nameBranch
 						$ git branch -D nameBranch
-- Xóa nhánh ở remote :				$ git push --delete nameRemote nameBranch
+- Xóa nhánh ở remote :				$ git push --delete origin nameBranch
+- Xem branch ở local :				$ git branch
+- Xem các brach trên local và remote :		$ git branch -a
 
-- Xem nhánh ở local :				$ git branch
-- Xem các nhánh trên local và remote :		$ git branch -a
+---------------------- Checkout --------------------------
+- Tạo Branch và checkout sang branch đó :	$ git checkout -b nameBranch
+- Checkout sang nhánh khác :			$ git checkout nameBranch
+						$ git switch nameBranch
+- Checkout từ nhánh hiện tại sang	
+  nhánh khác tại commit a123:			$ git checkout -b fix-bug-branch a123
+
+------------------------ cherry-pick ----------------------------
+- Lấy commit có hash a123 từ bất kì		
+  nhánh nào để áp dụng vào nhánh hiện tại :	$ git cherry-pick a123
+- cherry-pick nhiều commit			$ git cherry-pick a123 a124 a125
+
+- Giải quyết conflict: Trong quá trình cherry-pick, nếu có xung đột xảy ra Git sẽ yêu cầu bạn giải quyết các conflict.
+  Sau khi giải quyết xong conflict, cần thực hiện lệnh:
+  $ git add <file_with_conflict>
+  $ git cherry-pick --continue
 
 ------------------------ Push ----------------------------
 - Đồng bộ Local => Github  server :		$ git push
 - Push code tất cả các nhánh lên remote :	$ git push origin --all
-- Push code lên remote vào nhánh master :	$ git push origin master
-	(Push nhánh master tại local lên remote)
+- Push một nhánh từ local lên remote :		$ git push origin nameBranch
 
 ------------------------ Fetch --------------------------
-- Cập nhật info mới từ remote origin :		$ git fetch origin
-						$ git fetch origin namebranch
+- Lấy code mới từ remote origin :		$ git fetch origin
+(nhưng chưa merge vào code hiện tại)		$ git fetch origin namebranch
 
 ------------------------ Pull ---------------------------
 - Đồng bộ Local <= Gibhub server :		$ git pull
@@ -96,7 +100,17 @@
 - Copy Source code vào folder :			1- $ git init
 						2- $ git add .
 						3- $ git conmit
-						4- $ git push "name" "url"
+						4- $ git push "remote name" "branch name"
+
+----------------------- Vim --------------------------
+* Các bước để hoàn thành việc merge trong vim:
+Nếu bạn đồng ý với thông điệp commit mặc định:
+- Nhấn :wq và sau đó nhấn Enter để lưu và thoát.
+Nếu bạn muốn chỉnh sửa thông điệp commit:
+1. Di chuyển con trỏ tới dòng bạn muốn chỉnh sửa bằng các phím mũi tên.
+2. Nhấn i để chuyển sang chế độ "Insert", cho phép bạn chỉnh sửa văn bản.
+3. Sau khi chỉnh sửa xong, nhấn Esc để thoát khỏi chế độ "Insert".
+4. Cuối cùng, gõ :wq và nhấn Enter để lưu và thoát.
 
 ---------------------- Info config ---------------------------
 - Xem Info cấu hình : 			$ git config --list
