@@ -39,8 +39,7 @@
 						$ git reset --soft head~1 	(Commit cuối)
 						$ git reset --hard head~1 
 
-- Xóa commit trên remote về bằng local :	$ git push origin -f		(xóa trên remote)
- (commit ở local đã thay đổi vẫn push được)	$ git push origin nameBranch -f
+- Xóa commit trên remote về bằng local :	$ git push origin nameBranch -f || --force	(xóa trên remote)
 
 ---------------------- Remote --------------------------
 - Add remote :					$ git remote add origin https://github.com/thanhbinhgtv/Test.git
