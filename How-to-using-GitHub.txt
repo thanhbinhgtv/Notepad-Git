@@ -1,43 +1,40 @@
 ------------------------ Log ----------------------------
 - Xem commit :					$ git log
-						$ git log --oneline
-- Xem commit trên remote			$ git log --oneline origin/nameBranch
-- Xem graph commit branch :			$ git log --oneline --graph
+								$ git log --oneline
+- Xem commit trên remote :		$ git log --oneline origin/nameBranch
+- Xem graph commit branch :		$ git log --oneline --graph
 
 ------------------------ Add ----------------------------
 - Add :
-   + tất cả các file trừ xóa file :		$ git add .
+   + tất cả các file :				$ git add .
    + các file untracked :			$ git add *
-   + tên file muốn add :			$ git add name
-   + mọi thứ có sự thay đổi :			$ git add -A
+   + tên file muốn add :			$ git add fileName
+   + mọi thứ có sự thay đổi :		$ git add -A
    + mọi thứ trừ file mới :			$ git add -u
-
-- Đổi tên file : 				$ git mv css/oldName.js css/newName.js
+- Đổi tên file : 					$ git mv css/oldName.js css/newName.js
 
 - Bỏ add tất cả file đã add trên local :	$ git reset
-						$ git reset -- .
+											$ git reset -- .
 - Bỏ add một file đã add trên local :		$ git reset -- nameFile
-						$ git reset head -- nameFile
-- Liệt kê các file untracked muốn xóa :		$ git clean -d -n	(b1)
-- Xóa các file untracked :			$ git clean -d -f	(b2)
+											$ git reset head -- nameFile
 - Trở về trạng thái trước khi file bị sửa :	$ git restore -- .
-						$ git restore -- nameFile
-						$ git restore nameFile
+											$ git restore -- nameFile
+											$ git restore nameFile
 ---------------------- Commit -------------------------
 - Commit					$ git commit -m"message name"
 - Commit (Tùy chỉnh message)			$ git commit 
 (nhấn i hoặc insert để bắt đầu viết message - Esc để leave ra ngoài - :wq hoặc :wq! để kết thúc)
 
 ----------------------- Merge --------------------------
-- Gộp nhánh :					$ git merge nameBranch  	(Ko có commit "merge branch ...")
+- Gộp nhánh :			$ git merge nameBranch  		(Ko có commit "merge branch ...")
 						$ git merge nameBranch --no-ff  (Có commit "merge branch ...")
-- Tips : Đứng trên nhánh đang code có thể dùng ($ git pull origin develop) để merge mà ko cần sang develop để pull về trước
+- Tips : Đứng trên nhánh đang code có thể dùng ($ git pull origin develop) để merge develop vào
 
 ------------------------ Reset Commit ------------------
-- Reset về commit idC1 :			$ git reset --soft idC1 	(đưa vào vùng staging)
- (xóa toàn bộ commit sau idC1 ở local)		$ git reset --hard idC1 	(xóa cứng luôn)
-						$ git reset --soft head~1 	(Commit cuối)
-						$ git reset --hard head~1 
+- Reset về commit idC1 :	$ git reset --soft idC1 	(đưa vào vùng staging)
+							$ git reset --hard idC1 	(xóa cứng luôn)
+							$ git reset --soft head~1 	(Commit cuối)
+							$ git reset --hard head~1 
 
 - Xóa commit trên remote về bằng local :	$ git push origin nameBranch -f || --force	(xóa trên remote)
 
