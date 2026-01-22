@@ -98,6 +98,14 @@
 						3- $ git conmit
 						4- $ git push "remote name" "branch name"
 
+---------------------- Conflict ----------------------
+- Đang pull về mà bị conflict muốn bỏ đi làm lại như lúc chưa pull:
+	+ Pull bị conflict, chưa làm gì	: $ git merge --abort
+(Hủy merge/pull đang dang dở, Code quay lại y như trước khi pull, Không mất code chưa commit)
+
+	+ Code loạn, muốn bỏ hết : $ git reset --hard HEAD
+(Hủy toàn bộ thay đổi đang conflict, Mất toàn bộ code chưa commit)
+
 ----------------------- Vim --------------------------
 * Các bước để hoàn thành việc merge trong vim:
 Nếu bạn đồng ý với thông điệp commit mặc định:
